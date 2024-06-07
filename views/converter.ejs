@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MP3 Converter</title>
+  <link rel="stylesheet" type="text/css" href="/css/converter_page.css">
+
+</head>
+<body>
+  <h1>MP3 Converter</h1>
+  <h2>Hi, <%= username %>! Welcome to Converter Audio MP3</h2> 
+  <% if (typeof error !== 'undefined') { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+  <form method="POST" action="/convert" enctype="multipart/form-data">
+    <label for="file">Pilih file MP3:</label>
+    <input type="file" id="file" name="file" accept=".mp3" required>
+    <br>
+    <label for="format">Format output:</label>
+    <select id="format" name="format">
+      <option value="wav">WAV</option>
+      <option value="ogg">OGG</option>
+      <option value="flac">FLAC</option>
+    </select>
+    <br>
+    <button type="submit">Convert</button>
+    <div class="logout-button">
+        <br><br>
+        <a href="/logout">Logout</a> 
+      </div>
+  </form>
+  <h2>Riwayat Konversi</h2>
+  <ul>
+    <% conversions.forEach(conversion => { %>
+      <li>
+        <%= conversion.input_file %> -> <%= conversion.output_file %>
+        <a href="/download/<%= conversion.output_file %>" download>Download</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

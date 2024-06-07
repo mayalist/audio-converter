@@ -1,0 +1,136 @@
+/* public/css/converter_page.css */
+
+/* Atur font dan margin untuk seluruh halaman */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; /* Warna latar belakang biru muda */
+  color: #333; /* Warna teks utama */
+  position: relative; /* Diperlukan untuk posisi z-index */
+}
+
+/* Gambar latar belakang dengan efek blur */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/top_view_vinyl_discs_with_copy_space_1.jpeg'); /* Path menuju gambar latar belakang */
+  background-size: cover; /* Atur agar gambar latar belakang menutupi seluruh area body */
+  background-position: center; /* Atur posisi gambar latar belakang di tengah halaman */
+  filter: blur(5px); /* Efek blur */
+  z-index: -2; /* Taruh di belakang semua elemen lain */
+}
+
+/* Gaya untuk judul utama */
+h1 {
+  background-color: #1e90ff; /* Warna latar belakang biru cerah */
+  color: white; /* Warna teks putih */
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  border-bottom: 5px solid #4682b4; /* Warna border biru lebih gelap */
+}
+
+/* Gaya untuk sub judul */
+h2 {
+  color: #4682b4; /* Warna teks biru */
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Gaya untuk formulir */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc; /* Border abu-abu */
+  border-radius: 10px; /* Membuat sudut form melengkung */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Memberikan bayangan pada form */
+}
+
+/* Gaya untuk label */
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #4682b4; /* Warna teks label biru */
+}
+
+/* Gaya untuk input dan select */
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select {
+  width: calc(100% - 20px); /* Menyesuaikan lebar input */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Gaya untuk tombol */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e90ff; /* Warna latar belakang biru */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4682b4; /* Warna latar belakang biru lebih gelap saat di-hover */
+}
+
+/* Gaya untuk tautan logout */
+.logout-button a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #1e90ff; /* Warna teks biru */
+  text-decoration: none;
+}
+
+.logout-button a:hover {
+  text-decoration: underline; /* Garis bawah pada teks saat di-hover */
+}
+
+/* Gaya untuk pesan error */
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Gaya untuk daftar konversi */
+ul {
+  list-style-type: none; /* Menghapus bullet points */
+  padding: 0;
+}
+
+li {
+  background-color: #f0f8ff; /* Warna latar belakang biru muda */
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li a {
+  color: #1e90ff; /* Warna teks biru */
+  text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
